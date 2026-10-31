@@ -1,2 +1,3 @@
-/docs/
+/docs/*
+!/docs/sweep_results.md
 /target/
