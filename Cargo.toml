@@ -1,0 +1,12 @@
+[package]
+name = "gaussian_blur"
+version = "0.1.0"
+edition = "2024"
+# Több bináris van (src/bin/), ezért kell, hogy a sima `cargo run` a fő programot indítsa.
+default-run = "gaussian_blur"
+
+# Az "image" crate csak az I/O-t és a pixel-puffert adja, a blurt magam írtam meg.
+# default-features = false: így nincs benne belső "rayon" párhuzamosítás sem,
+# a szálkezelést én végzem std::thread-del. A features = ["png"] csak a PNG-t kapcsolja be.
+[dependencies]
+image = { version = "0.25.10", default-features = false, features = ["png"] }
